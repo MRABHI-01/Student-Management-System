@@ -1,10 +1,32 @@
 package service;
 
-public class StudentManager {
+import java.util.*;
+import model.Student;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+public class StudentManager 
+{
+	private ArrayList<Student> students;
+	public StudentManager()
+	{
+		students=new ArrayList<>();
 	}
-
+	
+	public void addStudent(Student student)
+	{
+		students.add(student);
+		System.out.println("Added successfully");
+	}
+	
+	public void displayStudent()
+	{
+		if(students.isEmpty())
+		{
+			System.out.println("NO one is there");
+		}
+		
+		for (Student x:students)
+		{
+			System.out.println(x);
+		}
+	}
 }
