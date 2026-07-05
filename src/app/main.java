@@ -1,6 +1,7 @@
 package app;
+import java.util.*;
 
-import model.Student;
+import model.Student; 
 import service.StudentManager;
 
 public class main {
@@ -8,11 +9,49 @@ public class main {
 	public static void main(String[] args) 
 	{
 		StudentManager y=new StudentManager();
-		Student s1=new Student(1,"Abhi",23,"cse");
-		Student s2=new Student(2,"Abh",2,"cs");
-		y.addStudent(s1);
-		y.addStudent(s2);
-		y.displayStudent();
+		Scanner x=new Scanner(System.in);
+		int choice;
+		while(true)
+		{
+			System.out.println("Student Management System");
+			System.out.println("1. Add student");
+			System.out.println("2. Display");
+			System.out.println("3. Search");
+			System.out.println("4. Exit");
+			System.out.println("Enter your choice:");
+			choice = x.nextInt();
+			switch(choice)
+			{
+			case 1:
+				System.out.println("Enter ID:");
+				int id=x.nextInt();
+				System.out.println("Enter Name:");
+				String name=x.next();
+				System.out.println("Enter Age:");
+				int age=x.nextInt();
+				System.out.println("Enter Course:");
+				String course=x.next();
+				Student s1=new Student(id,name,age,course);
+				y.addStudent(s1);
+				System.out.println("Thank you");
+				break;
+			case 2:
+				y.displayStudent();
+				System.out.println("Thank you");
+				break;
+			case 3:
+				System.out.println("Enter id for search:");
+				int i=x.nextInt();
+				y.searchStudent(i);
+				System.out.println("Thank you");
+				break;
+			case 4:
+				System.out.println("Thank you");
+				return;
+				default:
+					System.out.println("Choice Error");
+			}
+		}
 
 	}
 
