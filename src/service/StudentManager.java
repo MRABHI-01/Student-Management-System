@@ -40,7 +40,42 @@ public class StudentManager
 			if(x.getId()==id)
 				System.out.println("Student details are: " + x.toString());
 			else
-				System.out.println("Student not found.");
+			{
+			System.out.println("Student not found.");
+			break;
+			}
 		}
+	}
+	public void UpdateStudent(int id, String name, int age, String course)
+	{
+		boolean found=false;
+		for (Student x:students)
+		{
+			if(x.getId()==id)
+			{
+				x.setName(name);
+				x.setAge(age);
+				x.setCourse(course);
+				
+				System.out.println("Student found");
+				found=true;
+				break;
+			}
+	    }
+		if(!found)
+		{
+			System.out.println("Student not found");
+		}
+	}
+	public Student findstudentbyid(int id)
+	{
+		for (Student x:students)
+		{
+			if(x.getId()==id)
+			{
+				return x;
+			}
+		}
+		return null;
 	}
 }
