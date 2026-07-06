@@ -1,7 +1,8 @@
 package service;
 
-import java.util.*; 
+import java.util.*;  
 import model.Student;
+import util.FileManager;
 
 public class StudentManager 
 {
@@ -89,5 +90,9 @@ public class StudentManager
 			}
 		}
 		System.out.println("Student not found");
+	}
+	public ArrayList<Student> getStudent()
+	{
+		return students;
 	}
 }

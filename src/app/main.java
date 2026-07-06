@@ -1,14 +1,16 @@
 package app;
-import java.util.*;
+import java.util.*; 
 
 import model.Student; 
 import service.StudentManager;
+import util.FileManager;
 
 public class main {
 
 	public static void main(String[] args) 
 	{
 		StudentManager y=new StudentManager();
+//		FileManager f=new FileManager();
 		Scanner x=new Scanner(System.in);
 		int choice;
 		while(true)
@@ -71,7 +73,10 @@ public class main {
 				System.out.println("Thank you");
 				break;
 			case 6:
-				System.out.println("Thank you");
+				FileManager.saveStudents(y.getStudent());
+				System.out.println("Thank you for using Student Manager");
+				x.close();
+				System.exit(0);
 				return;
 				default:
 					System.out.println("Choice Error");
