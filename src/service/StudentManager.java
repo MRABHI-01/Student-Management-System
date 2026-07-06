@@ -78,4 +78,16 @@ public class StudentManager
 		}
 		return null;
 	}
+	public void deleteStudent(int id)
+	{
+		for (Student x:students)
+		{
+			if(x.getId()==id)
+			{
+				students.remove(x);
+				System.out.println("Student deleted successfully");
+			}
+		}
+		System.out.println("Student not found");
+	}
 }

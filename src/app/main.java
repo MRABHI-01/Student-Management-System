@@ -18,7 +18,8 @@ public class main {
 			System.out.println("2. Display");
 			System.out.println("3. Search");
 			System.out.println("4. Update");
-			System.out.println("5. Exit");
+			System.out.println("5. Delete");
+			System.out.println("6. Exit");
 			System.out.println("Enter your choice:");
 			choice = x.nextInt();
 			switch(choice)
@@ -64,6 +65,12 @@ public class main {
 				System.out.println("Thank you");
 				break;
 			case 5:
+				System.out.println("Enter id for deletion");
+				int f=x.nextInt();
+				y.deleteStudent(f);
+				System.out.println("Thank you");
+				break;
+			case 6:
 				System.out.println("Thank you");
 				return;
 				default:
