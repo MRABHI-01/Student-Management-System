@@ -10,6 +10,7 @@ public class main {
 	public static void main(String[] args) 
 	{
 		StudentManager y=new StudentManager();
+		y.setStudents(FileManager.loadStudents());
 //		FileManager f=new FileManager();
 		Scanner x=new Scanner(System.in);
 		int choice;
