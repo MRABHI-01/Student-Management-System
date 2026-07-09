@@ -28,5 +28,29 @@ public class FileManager {
 			System.out.println("Error while saving");
 		}
 	}
+	public static ArrayList<Student> loadStudents()
+	{
+		ArrayList<Student> students=new ArrayList<>();
+		try
+		{
+			BufferedReader reader=new BufferedReader(new FileReader("students.txt"));
+			String line;
+			while((line=reader.readLine())!=null)
+			{
+				String [] data=line.split(",");
+				int id=Integer.parseInt(data[0]);
+				String name=data[1];
+				int age=Integer.parseInt(data[2]);
+				String course=data[3];
+				Student student=new Student(id,name,age,course);	
+				students.add(student);
+			}
+			reader.close();
+		}catch(IOException e)
+		{
+			System.out.println("No saved data found");
+		}
+		return students;
+	}
 
 }

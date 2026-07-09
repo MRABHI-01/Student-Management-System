@@ -95,4 +95,8 @@ public class StudentManager
 	{
 		return students;
 	}
+	public void setStudents(ArrayList<Student>students)
+	{
+		this.students=students;
+	}
 }

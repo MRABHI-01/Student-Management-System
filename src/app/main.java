@@ -30,6 +30,13 @@ public class main {
 			case 1:
 				System.out.println("Enter ID:");
 				int id=x.nextInt();
+				
+				Student std=y.findstudentbyid(id);
+				if(std!=null)
+				{
+					System.out.println("Student already exits.");
+					break;
+				}
 				System.out.println("Enter Name:");
 				String name=x.next();
 				System.out.println("Enter Age:");
