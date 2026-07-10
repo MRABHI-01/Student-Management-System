@@ -1,9 +1,10 @@
 package app;
-import java.util.*; 
+import java.util.*;  
 
 import model.Student; 
 import service.StudentManager;
 import util.FileManager;
+import util.InputValidator;
 
 public class main {
 
@@ -30,6 +31,12 @@ public class main {
 			case 1:
 				System.out.println("Enter ID:");
 				int id=x.nextInt();
+				x.nextLine();
+				if(!InputValidator.isValidId(id))
+				{
+					System.out.println("Invalid Student");
+					break;
+				}
 				
 				Student std=y.findstudentbyid(id);
 				if(std!=null)
@@ -39,10 +46,28 @@ public class main {
 				}
 				System.out.println("Enter Name:");
 				String name=x.next();
+				if(InputValidator.isValidName(name))
+				{
+					System.out.println("Invalid Name");
+					break;
+				}
+				
 				System.out.println("Enter Age:");
 				int age=x.nextInt();
+				x.nextLine();
+				if(InputValidator.isValidAge(age))
+				{
+					System.out.println("Invalid Age");
+					break;
+				}
+				
 				System.out.println("Enter Course:");
 				String course=x.next();
+				if(InputValidator.isValidCourse(course))
+				{
+					System.out.println("Invalid Course");
+					break;
+				}
 				Student s1=new Student(id,name,age,course);
 				y.addStudent(s1);
 				System.out.println("Thank you");
