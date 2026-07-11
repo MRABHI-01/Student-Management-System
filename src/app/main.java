@@ -46,7 +46,7 @@ public class main {
 				}
 				System.out.println("Enter Name:");
 				String name=x.next();
-				if(InputValidator.isValidName(name))
+				if(!InputValidator.isValidName(name))
 				{
 					System.out.println("Invalid Name");
 					break;
@@ -55,7 +55,7 @@ public class main {
 				System.out.println("Enter Age:");
 				int age=x.nextInt();
 				x.nextLine();
-				if(InputValidator.isValidAge(age))
+				if(!InputValidator.isValidAge(age))
 				{
 					System.out.println("Invalid Age");
 					break;
@@ -63,7 +63,7 @@ public class main {
 				
 				System.out.println("Enter Course:");
 				String course=x.next();
-				if(InputValidator.isValidCourse(course))
+				if(!InputValidator.isValidCourse(course))
 				{
 					System.out.println("Invalid Course");
 					break;
@@ -106,7 +106,6 @@ public class main {
 				System.out.println("Thank you");
 				break;
 			case 6:
-				FileManager.saveStudents(y.getStudent());
 				System.out.println("Thank you for using Student Manager");
 				x.close();
 				System.exit(0);

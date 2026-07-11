@@ -15,6 +15,7 @@ public class StudentManager
 	public void addStudent(Student student)
 	{
 		students.add(student);
+		FileManager.saveStudents(students);
 		System.out.println("Added successfully");
 	}
 	
@@ -58,6 +59,8 @@ public class StudentManager
 				x.setAge(age);
 				x.setCourse(course);
 				
+				FileManager.saveStudents(students);
+				
 				System.out.println("Student found");
 				found=true;
 				break;
@@ -86,6 +89,7 @@ public class StudentManager
 			if(x.getId()==id)
 			{
 				students.remove(x);
+				FileManager.saveStudents(students);
 				System.out.println("Student deleted successfully");
 			}
 		}
