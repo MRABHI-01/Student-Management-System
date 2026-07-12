@@ -1,5 +1,6 @@
 package service;
 
+import java.security.cert.CollectionCertStoreParameters;
 import java.util.*;  
 import model.Student;
 import util.FileManager;
@@ -102,5 +103,16 @@ public class StudentManager
 	public void setStudents(ArrayList<Student>students)
 	{
 		this.students=students;
+	}
+	public void sortStudents()
+	{
+		Collections.sort(students, new Comparator<Student>()
+		{
+			public int compare(Student s1, Student s2)
+			{
+				return Integer.compare(s1.getId(), s2.getId());
+			}
+		});
+		System.out.println("Students sorted.");
 	}
 }

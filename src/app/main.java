@@ -23,7 +23,8 @@ public class main {
 			System.out.println("3. Search");
 			System.out.println("4. Update");
 			System.out.println("5. Delete");
-			System.out.println("6. Exit");
+			System.out.println("6. Sorting");
+			System.out.println("7. Exit");
 			System.out.println("Enter your choice:");
 			choice = x.nextInt();
 			switch(choice)
@@ -106,6 +107,9 @@ public class main {
 				System.out.println("Thank you");
 				break;
 			case 6:
+				y.sortStudents();
+				break;
+			case 7:
 				System.out.println("Thank you for using Student Manager");
 				x.close();
 				System.exit(0);
