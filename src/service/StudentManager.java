@@ -29,7 +29,12 @@ public class StudentManager
 		
 		for (Student x:students)
 		{
-			System.out.println(x);
+			System.out.println("=====================================");
+			System.out.println("ID      : " + x.getId());
+			System.out.println("Name    : " + x.getName());
+			System.out.println("Age     : " + x.getAge());
+			System.out.println("Course  : " + x.getCourse());
+			System.out.println("=====================================");
 		}
 	}
 	public void searchStudent(int id)
