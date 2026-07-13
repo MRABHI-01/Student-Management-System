@@ -1,6 +1,6 @@
 package service;
 
-import java.security.cert.CollectionCertStoreParameters;
+import java.security.cert.CollectionCertStoreParameters; 
 import java.util.*;  
 import model.Student;
 import util.FileManager;
@@ -130,5 +130,17 @@ public class StudentManager
 		{
 			System.out.println("Student not found.");
 		}
+	}
+	public void sortStudentbyName()
+	{
+		Collections.sort(students,new Comparator<Student>()
+				{
+			public int compare(Student s1,Student s2)
+			{
+				return s1.getName().compareToIgnoreCase(s2.getName());
+			}
+				});
+		System.out.println("Students sorted by name successfully.");
+		displayStudent();
 	}
 }

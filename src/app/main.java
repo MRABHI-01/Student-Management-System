@@ -25,7 +25,8 @@ public class main {
 			System.out.println("5. Update");
 			System.out.println("6. Delete");
 			System.out.println("7. Sorting by ID");
-			System.out.println("8. Exit");
+			System.out.println("8. Sorting by Name");
+			System.out.println("9. Exit");
 			System.out.println("Enter your choice:");
 			choice = x.nextInt();
 			switch(choice)
@@ -117,6 +118,9 @@ public class main {
 				y.sortStudents();
 				break;
 			case 8:
+				y.sortStudentbyName();
+				break;
+			case 9:
 				System.out.println("Thank you for using Student Manager");
 				x.close();
 				System.exit(0);
