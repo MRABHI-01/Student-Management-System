@@ -20,11 +20,12 @@ public class main {
 			System.out.println("Student Management System");
 			System.out.println("1. Add student");
 			System.out.println("2. Display");
-			System.out.println("3. Search");
-			System.out.println("4. Update");
-			System.out.println("5. Delete");
-			System.out.println("6. Sorting");
-			System.out.println("7. Exit");
+			System.out.println("3. Search by ID");
+			System.out.println("4. Search by Name");
+			System.out.println("5. Update");
+			System.out.println("6. Delete");
+			System.out.println("7. Sorting by ID");
+			System.out.println("8. Exit");
 			System.out.println("Enter your choice:");
 			choice = x.nextInt();
 			switch(choice)
@@ -84,6 +85,12 @@ public class main {
 				System.out.println("Thank you");
 				break;
 			case 4:
+				x.nextLine();
+				System.out.println("Enter name:");
+				String s=x.nextLine();
+				y.searchStudentByName(s);
+				break;
+			case 5:
 				System.out.println("Enter id to update");
 				int a=x.nextInt();
 				Student s2=y.findstudentbyid(a);
@@ -100,16 +107,16 @@ public class main {
 				y.UpdateStudent(a, b, c, d);
 				System.out.println("Thank you");
 				break;
-			case 5:
+			case 6:
 				System.out.println("Enter id for deletion");
 				int f=x.nextInt();
 				y.deleteStudent(f);
 				System.out.println("Thank you");
 				break;
-			case 6:
+			case 7:
 				y.sortStudents();
 				break;
-			case 7:
+			case 8:
 				System.out.println("Thank you for using Student Manager");
 				x.close();
 				System.exit(0);

@@ -115,4 +115,20 @@ public class StudentManager
 		});
 		System.out.println("Students sorted.");
 	}
+	public void searchStudentByName(String Name)
+	{
+		boolean found=false;
+		for(Student student:students)
+		{
+			if(student.getName().equalsIgnoreCase(Name))
+			{
+				System.out.println(student);
+				found=true;
+			}
+		}
+		if(!found)
+		{
+			System.out.println("Student not found.");
+		}
+	}
 }
