@@ -148,4 +148,29 @@ public class StudentManager
 		System.out.println("Students sorted by name successfully.");
 		displayStudent();
 	}
+	public void StudentStastics()
+	{
+		int total=students.size();
+		int cse=0,ece=0,mechanical=0;
+		for (Student s:students)
+		{
+			if(s.getCourse().equalsIgnoreCase("cse"))
+			{
+				cse++;
+			}
+			else if(s.getCourse().equalsIgnoreCase("ece"))
+			{
+				ece++;
+			}
+			else if(s.getCourse().equalsIgnoreCase("mechanical"))
+			{
+				mechanical++;
+			}
+		}
+		 System.out.println("\n========== Student Statistics ==========");
+		    System.out.println("Total Students : " + total);
+		    System.out.println("CSE            : " + cse);
+		    System.out.println("ECE            : " + ece);
+		    System.out.println("Mechanical     : " + mechanical);
+	}
 }
