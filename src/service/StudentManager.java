@@ -173,4 +173,26 @@ public class StudentManager
 		    System.out.println("ECE            : " + ece);
 		    System.out.println("Mechanical     : " + mechanical);
 	}
+	public void searchStudentsbyCourse(String course)
+	{
+		boolean found=false;
+		for(Student student:students)
+		{
+			if(student.getCourse().equalsIgnoreCase(course))
+			{
+				System.out.println("--------------------------------");
+	            System.out.println("ID      : " + student.getId());
+	            System.out.println("Name    : " + student.getName());
+	            System.out.println("Age     : " + student.getAge());
+	            System.out.println("Course  : " + student.getCourse());
+	            System.out.println("--------------------------------");
+
+	            found = true;
+			}
+		}
+		if(!found)
+		{
+			System.out.println("No students found in this course.");
+		}
+	}
 }
