@@ -80,7 +80,7 @@ public class main {
 					System.out.println("Thank you");
 					break;
 				case 2:
-					y.displayStudent();
+					y.displayStudents();
 					System.out.println("Thank you");
 					break;
 				case 3:
@@ -125,7 +125,7 @@ public class main {
 					y.sortStudentbyName();
 					break;
 				case 9:
-					y.StudentStastics();
+					y.studentStatistics();
 					break;
 				case 10:
 					System.out.println("Enter the course for search:");

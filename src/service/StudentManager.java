@@ -1,6 +1,6 @@
 package service;
 
-import java.security.cert.CollectionCertStoreParameters; 
+import java.security.cert.CollectionCertStoreParameters;  
 import java.util.*;  
 import model.Student;
 import util.FileManager;
@@ -20,22 +20,26 @@ public class StudentManager
 		System.out.println("Added successfully");
 	}
 	
-	public void displayStudent()
-	{
-		if(students.isEmpty())
-		{
-			System.out.println("NO one is there");
-		}
-		
-		for (Student x:students)
-		{
-			System.out.println("=====================================");
-			System.out.println("ID      : " + x.getId());
-			System.out.println("Name    : " + x.getName());
-			System.out.println("Age     : " + x.getAge());
-			System.out.println("Course  : " + x.getCourse());
-			System.out.println("=====================================");
-		}
+	public void displayStudents() {
+
+	    if (students.isEmpty()) {
+	        System.out.println("No students found.");
+	        return;
+	    }
+
+	    System.out.println("------------------------------------------------------------");
+	    System.out.printf("%-10s %-20s %-10s %-15s%n", "ID", "NAME", "AGE", "COURSE");
+	    System.out.println("------------------------------------------------------------");
+
+	    for (Student student : students) {
+	        System.out.printf("%-10d %-20s %-10d %-15s%n",
+	                student.getId(),
+	                student.getName(),
+	                student.getAge(),
+	                student.getCourse());
+	    }
+
+	    System.out.println("------------------------------------------------------------");
 	}
 	public void searchStudent(int id)
 	{
@@ -148,31 +152,31 @@ public class StudentManager
 		System.out.println("Students sorted by name successfully.");
 		displayStudent();
 	}
-	public void StudentStastics()
-	{
-		int total=students.size();
-		int cse=0,ece=0,mechanical=0;
-		for (Student s:students)
-		{
-			if(s.getCourse().equalsIgnoreCase("cse"))
-			{
-				cse++;
-			}
-			else if(s.getCourse().equalsIgnoreCase("ece"))
-			{
-				ece++;
-			}
-			else if(s.getCourse().equalsIgnoreCase("mechanical"))
-			{
-				mechanical++;
-			}
-		}
-		 System.out.println("\n========== Student Statistics ==========");
-		    System.out.println("Total Students : " + total);
-		    System.out.println("CSE            : " + cse);
-		    System.out.println("ECE            : " + ece);
-		    System.out.println("Mechanical     : " + mechanical);
-	}
+//	public void StudentStastics()
+//	{
+//		int total=students.size();
+//		int cse=0,ece=0,mechanical=0;
+//		for (Student s:students)
+//		{
+//			if(s.getCourse().equalsIgnoreCase("cse"))
+//			{
+//				cse++;
+//			}
+//			else if(s.getCourse().equalsIgnoreCase("ece"))
+//			{
+//				ece++;
+//			}
+//			else if(s.getCourse().equalsIgnoreCase("mechanical"))
+//			{
+//				mechanical++;
+//			}
+//		}
+//		 System.out.println("\n========== Student Statistics ==========");
+//		    System.out.println("Total Students : " + total);
+//		    System.out.println("CSE            : " + cse);
+//		    System.out.println("ECE            : " + ece);
+//		    System.out.println("Mechanical     : " + mechanical);
+//	}
 	public void searchStudentsbyCourse(String course)
 	{
 		boolean found=false;
@@ -193,6 +197,22 @@ public class StudentManager
 		if(!found)
 		{
 			System.out.println("No students found in this course.");
+		}
+	}
+	public void studentStatistics()
+	{
+		Map<String,Integer> courseCount=new HashMap<>();
+		for (Student student:students)
+		{
+			String course=student.getCourse();
+			courseCount.put(course, courseCount.getOrDefault(course, 0)+1);
+		}
+		System.out.println("\n==========Student Statistics==========");
+		System.out.println("Total Students: "+students.size());
+		
+		for(Map.Entry<String, Integer> entry: courseCount.entrySet())
+		{
+			System.out.println(entry.getKey()+ " : "+entry.getValue());
 		}
 	}
 }
